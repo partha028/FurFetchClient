@@ -6,6 +6,6 @@ import SearchPage from './components/searchPage/searchPage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <SearchPage />
+    <App/>
   </StrictMode>,
 )

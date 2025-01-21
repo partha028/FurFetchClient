@@ -1,0 +1,93 @@
+/* Global Styles for the Form */
+.auth-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 2em;
+    color: #42b883;
+    margin-bottom: 20px;
+  }
+  
+  /* Form input styles */
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+  }
+  
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #42b883;
+    outline: none;
+  }
+  
+  /* Error and Success Message */
+  p {
+    font-size: 1em;
+  }
+  
+  p.error {
+    color: red;
+  }
+  
+  p.success {
+    color: green;
+  }
+  
+  /* Button */
+  button {
+    width: 100%;
+    padding: 15px;
+    background-color: #42b883;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #358e6e;
+  }
+  
+  /* Links */
+  span {
+    color: #42b883;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  span:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive design for small screens */
+  @media (max-width: 600px) {
+    .auth-container {
+      padding: 20px;
+      width: 90%;
+    }
+  
+    h2 {
+      font-size: 1.8em;
+    }
+  
+    button {
+      font-size: 1em;
+    }
+  }
+  
