@@ -28,9 +28,10 @@ const SearchPage = () => {
   
     return (
       <div className="search-page">
-        <h1>Find Your Pet</h1>
+       
   
         <div className="search-filter-container">
+          <h1>Explore</h1>
           <input
             type="text"
             placeholder="Search pets by name..."
