@@ -1,65 +1,136 @@
 .search-page {
-    margin: 0 auto;
-    padding: 70px;
-    padding-top: 0px;
-    font-family: 'Poppins', sans-serif;
-    color: #000;
-    background-color: #2D2F3A !important;
+  margin: 0 auto;
+  padding: 70px;
+  padding-top: 0px;
+  font-family: 'Poppins', sans-serif;
+  color: #000;
+  background-color: #2D2F3A !important;
+}
+
+.search-filter-container h1 {
+  color: white;
+}
+
+.search-filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  margin-left: 20px;
+  padding: 10px;
+  width: 25%;
+  border: 1px solid #ccc;
+  border-radius: 15px; /* Increased from 10px to 15px for a softer roundness */
+  font-size: 16px;
+}
+
+.filter-dropdown {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  width: 200px;
+}
+
+/* Grid layout for pet cards */
+.pet-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .pet-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .pet-list {
+    grid-template-columns: 1fr;
   }
 
-  .search-filter-container h1 {
-    color: white;
-  }
-  
   .search-filter-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 10px;
   }
-  
-  .search-input {
-    padding: 10px;
-    width: 25%;
-    border: 1px solid #ccc;
-    border-radius: 15px; /* Increased from 10px to 15px for a softer roundness */
-    font-size: 16px;
+
+  .search-input, .filter-dropdown {
+    width: 100%;
   }
-  
-  .filter-dropdown {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 16px;
-    width: 200px;
-  }
-  
-  /* Grid layout for pet cards */
-  .pet-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .pet-list {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .pet-list {
-      grid-template-columns: 1fr;
-    }
-  
-    .search-filter-container {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .search-input, .filter-dropdown {
-      width: 100%;
-    }
-  }
-  
+}
+
+.filter-section {
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 200px; /* Smaller filter width */
+  margin: 10px auto;
+  margin-right: 10px;
+}
+
+.filter-header {
+  padding: 10px;
+  font-size: 14px;
+  width: 150px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e91e63;
+  color: #fff;
+  border-radius: 6px;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 10px 20px rgba(233, 30, 99, 0.4);
+}
+
+.filter-header:hover {
+  background-color: #d81b60;
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.6);
+}
+
+.filter-options {
+  position: absolute;
+  top: 100%;
+  right: 0;  /* Aligns to the right side */
+  width: 280px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5); /* Less transparency */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it overlays other elements */
+  display: none; /* Initially hidden */
+}
+
+.filter-section.open .filter-options {
+  display: block; /* Show options when filter is open */
+}
+
+.filter-dropdown {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  outline: none;
+}
+
+label {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 3px;
+  color: #333;
+}
+
+.filter-icon {
+  width: 70px; /* Adjusted to make it a bit bigger */
+  height: auto; /* Maintain the aspect ratio */
+  /* margin-left: 10px; Optional: space between the text and the image */
+}
