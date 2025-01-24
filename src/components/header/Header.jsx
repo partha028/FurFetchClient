@@ -27,10 +27,13 @@ const Header = () => {
             <Link to="/profile" className="nav-link">Profile</Link>
           ) : null}
           </li>
-          <li>
-          <button className="auth-button" onClick={() => setIsLoggedIn(!isLoggedIn)}>
+          <li className='auth'>
+          <button className="auth-button-text" onClick={() => setIsLoggedIn(!isLoggedIn)}>
             {isLoggedIn ? 'Logout' : 'Login'}
           </button>
+          {!isLoggedIn && <button className="auth-button" onClick={() => setIsLoggedIn(!isLoggedIn)}>
+            Signup
+          </button>}
           </li>
         </ul>
       </nav>

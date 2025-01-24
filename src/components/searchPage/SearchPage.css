@@ -1,7 +1,9 @@
 .search-page {
     margin: 0 auto;
     padding: 70px;
-    font-family: Arial, sans-serif;
+    padding-top: 0px;
+    font-family: 'Poppins', sans-serif;
+    color: #000;
     background-color: #2D2F3A !important;
   }
 
@@ -18,16 +20,16 @@
   
   .search-input {
     padding: 10px;
-    width: 50%;
+    width: 25%;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px; /* Increased from 10px to 15px for a softer roundness */
     font-size: 16px;
   }
   
   .filter-dropdown {
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 16px;
     width: 200px;
   }

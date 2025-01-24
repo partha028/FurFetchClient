@@ -14,8 +14,10 @@ const SearchPage = () => {
       const fetchPets = () => {
         const data = getPetData();
         setPetData(data);
+        console.log('petdata', data)
       };
       fetchPets();
+      
     }, []);
   
     // Get unique pet types dynamically

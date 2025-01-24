@@ -4,15 +4,16 @@ import './SearchPageCard.css';
 
 
 const SearchPageCard = ({ pet }) => {
-    return (
-        <div className="pet-card">
-          <Link to={`/search/${pet.id}`}>
-            <img src={pet.image} alt={pet.name} className="pet-image" />
-          </Link>
-          <h3>{pet.name}</h3>
-          <p>{pet.desc}</p>
-        </div>
-    );
+  return (
+    <div className="pet-card">
+      <img src={pet.image} alt={pet.name} className="pet-image" />
+      <h3>{pet.name}</h3>
+      <p>{pet.desc}</p>
+      <button className="pet-button" onClick={() => window.location.href=`/search/${pet.id}`}>
+        →
+      </button>
+    </div>
+  );
 };
 
 export default SearchPageCard;

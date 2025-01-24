@@ -6,6 +6,7 @@ import SignIn from '../components/RegistrationAndLogin/SignIn';
 import SignUp from '../components/RegistrationAndLogin/SignUp';
 import AboutUs from '../components/AbtAndContact/AboutUs';
 import Contact from '../components/AbtAndContact/Contact';
+import Home from '../components/home/Home';
 
 const AppRouter = () => {
   const [showSignIn, setShowSignIn] = useState(true);
@@ -39,6 +40,7 @@ const AppRouter = () => {
               </div>
             }
           />
+           <Route path="/home" element={<Home />} />
           <Route path="/signin" element={<SignIn setShowSignIn={setShowSignIn} />} />
           <Route path="/signup" element={<SignUp setShowSignIn={setShowSignIn} />} />
           <Route path="/search" element={<SearchPage />} />

@@ -6,11 +6,57 @@
 
 .header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: top;
   background-color: #2D2F3A; /* Background color from the image */
-  padding: 20px 40px; /* Adjust padding for spacing */
+  padding: 20px 20px; /* Adjust padding for spacing */
+  font-family: 'Poppins', sans-serif;
 }
+
+.auth {
+  margin-left: 350px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.auth-button {
+  background-color: #e91e63;  /* Pink background */
+  color: #fff;  /* White text */
+  font-size: 1rem;  
+  padding: 15px 50px;  /* Increased padding for wider button */
+  border: none;
+  border-radius: 40px 40px 40px 0;  /* More rounded edges */
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(233, 30, 99, 0.4);  /* Shadow effect */
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+  outline: none;
+  display: inline-block;
+}
+
+.auth-button:hover {
+  background-color: #d81b60;  /* Slightly darker pink on hover */
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.6);  /* Stronger shadow */
+}
+
+.auth-button-text{ /* Pink background */
+  background: none; /* Removes the background */
+  border: none; /* Removes the border */
+  padding: 0; /* Removes padding */
+  font: inherit; /* Inherits the font from the surrounding text */
+  color: inherit; /* Inherits the text color */
+  cursor: pointer;
+  font-size: medium;
+  
+}
+.auth-button-text:hover {
+  background: none; /* Removes any hover background */
+  border: none; /* Removes any hover border */
+  box-shadow: none; /* Removes any box shadow on hover */
+  color: #ff6680;
+}
+
 
 .nav ul {
   display: flex;
@@ -23,6 +69,7 @@
   font-size: 22px; /* Readable font size */
   text-decoration: none;
   font-weight: 500;
+  font-family: 'Poppins', sans-serif;
 }
 
 .nav ul li a:hover {
