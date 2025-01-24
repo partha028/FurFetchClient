@@ -17,6 +17,7 @@ const SignIn = ({ setShowSignIn }) => {
 
     setError("");
     alert("Signed in successfully!");
+    window.location.href = "/home";
   };
 
   return (

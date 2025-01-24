@@ -41,6 +41,7 @@ const SignUp = ({ setShowSignIn }) => {
     localStorage.setItem("users", JSON.stringify([...users, newUser]));
     setError("");
     setSuccess("Account created successfully! Please sign in.");
+    window.location.href = "/signin";
   };
 
   return (

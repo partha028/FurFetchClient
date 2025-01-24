@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/Logo1.png';
 import './Header.css';
 
 const Header = () => {
@@ -9,11 +10,13 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <Link to="/">FurFetch</Link>
+      <Link to="/home">
+        <img src={logo} alt="FurFetch Logo" className="logo-img" />
+      </Link>
       </div>
       <nav className="nav">
         <ul>
-          <li><Link to="/">Home</Link></li>
+          <li><Link to="/home">Home</Link></li>
           <li><Link to="/search">Search Pets</Link></li>
           <li><Link to="/pets">Pets</Link></li>
           <li><Link to="/blog">Blog</Link></li>

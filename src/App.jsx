@@ -7,9 +7,9 @@ import AboutUs from './components/AbtAndContact/AboutUs'
 function App() {
 
   return (
-    <>
+    <div className='app'>
       <AppRouter />
-    </>
+    </div>
   )
 }
 
