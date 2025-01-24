@@ -4,6 +4,8 @@ import Header from '../components/header/Header';
 import SearchPage from '../components/searchPage/searchPage';
 import SignIn from '../components/RegistrationAndLogin/SignIn';
 import SignUp from '../components/RegistrationAndLogin/SignUp';
+import AboutUs from '../components/AbtAndContact/AboutUs';
+import Contact from '../components/AbtAndContact/Contact';
 
 const AppRouter = () => {
   const [showSignIn, setShowSignIn] = useState(true);
@@ -40,6 +42,9 @@ const AppRouter = () => {
           <Route path="/signin" element={<SignIn setShowSignIn={setShowSignIn} />} />
           <Route path="/signup" element={<SignUp setShowSignIn={setShowSignIn} />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<Contact />} />
+
           {/* Add other routes here */}
         </Routes>
       </Layout>
