@@ -10,12 +10,20 @@ body {
 /* Home Container */
 .home-container {
     display: flex;
-    flex-direction:inherit;
-    align-items:flex-start;
+    flex-direction: inherit;
+    align-items: flex-start;
     justify-content: flex-start;
     padding-left: 100px;
     padding-bottom: 50px;
-   
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .home-container {
+        padding-left: 50px;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /* Hero Section */
@@ -33,9 +41,6 @@ body {
     margin-bottom: 20px;
     line-height: 1.2;
 }
-.nav{
-    margin-top: 20px;
-}
 
 .hero-description {
     font-size: 2rem;
@@ -46,13 +51,33 @@ body {
     text-align: left !important;
 }
 
+/* Responsive hero section */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero-description {
+        font-size: 1.5rem;
+        text-align: center !important;
+    }
+}
+
 /* Hero Buttons */
 .hero-buttons {
     margin-top: 20px;
     display: flex;
     gap: 80px;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: center;
+}
+
+/* Responsive hero buttons */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
 }
 
 /* Get Started Button */
@@ -60,11 +85,11 @@ body {
     background-color: #e91e63;  /* Pink background */
     color: #fff;  /* White text */
     font-size: 1rem;  
-    padding: 15px 50px;  /* Increased padding for wider button */
+    padding: 15px 50px;
     border: none;
-    border-radius: 40px 40px 40px 0;  /* More rounded edges */
+    border-radius: 40px 40px 40px 0;
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(233, 30, 99, 0.4);  /* Shadow effect */
+    box-shadow: 0 10px 20px rgba(233, 30, 99, 0.4);
     font-weight: 600;
     transition: all 0.3s ease;
     text-align: center;
@@ -73,8 +98,8 @@ body {
 }
 
 .get-started-btn:hover {
-    background-color: #d81b60;  /* Slightly darker pink on hover */
-    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.6);  /* Stronger shadow */
+    background-color: #d81b60;
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.6);
 }
 
 /* Learn More Link */
@@ -101,3 +126,24 @@ body {
 .learn-more-link:hover::after {
     width: 120%;
 }
+
+/* Responsive layout adjustments */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1.2rem;
+    }
+
+    .get-started-btn {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+
+    .learn-more-link {
+        font-size: 0.9rem;
+    }
+}
+

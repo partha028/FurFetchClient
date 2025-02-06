@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from '../components/header/Header';
-import SearchPage from '../components/searchPage/searchPage';
+import SearchPage from '../components/searchPage/SearchPage';
 import SignIn from '../components/RegistrationAndLogin/SignIn';
 import SignUp from '../components/RegistrationAndLogin/SignUp';
 import AboutUs from '../components/AbtAndContact/AboutUs';
 import Contact from '../components/AbtAndContact/Contact';
 import Home from '../components/home/Home';
+import PetDetailsPage from '../components/petDetails/PetDetails';
 
 const AppRouter = () => {
   const [showSignIn, setShowSignIn] = useState(true);
@@ -46,6 +47,7 @@ const AppRouter = () => {
           <Route path="/search" element={<SearchPage />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/search/:id" element={<PetDetailsPage />} />
 
           {/* Add other routes here */}
         </Routes>

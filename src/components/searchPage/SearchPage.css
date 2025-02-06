@@ -134,3 +134,20 @@ label {
   height: auto; /* Maintain the aspect ratio */
   /* margin-left: 10px; Optional: space between the text and the image */
 }
+
+.clear-filters-btn {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.clear-filters-btn:hover {
+  background-color: #d81b60;
+}
+
