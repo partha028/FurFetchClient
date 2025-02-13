@@ -8,7 +8,9 @@
   display: flex;
   align-items: top;
   background-color: #2D2F3A; /* Background color from the image */
-  padding: 20px 20px; /* Adjust padding for spacing */
+  padding-right: 20px ; /* Adjust padding for spacing */
+  padding-left: 20px; 
+  padding-top: 20px; 
   font-family: 'Poppins', sans-serif;
 }
 
@@ -60,6 +62,7 @@
 
 .nav ul {
   display: flex;
+  padding-top: 30px;
   list-style: none;
   gap: 30px; /* Space between nav items */
 }

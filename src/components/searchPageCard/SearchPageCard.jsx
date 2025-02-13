@@ -8,7 +8,7 @@ const SearchPageCard = ({ pet }) => {
     <div className="pet-card">
       <img src={pet.image} alt={pet.name} className="pet-image" />
       <h3>{pet.name}</h3>
-      <p>{pet.desc}</p>
+      <p>{pet.description}</p>
       <button className="pet-button" onClick={() => window.location.href=`/search/${pet.id}`}>
         →
       </button>
