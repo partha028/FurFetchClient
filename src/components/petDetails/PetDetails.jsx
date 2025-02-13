@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getPetData } from '../../api/Api';
+import { getPetById, updatePet } from '../../api/Api'; // Import updatePet
 import './PetDetails.css';
 
 const PetDetailsPage = () => {
@@ -12,16 +12,11 @@ const PetDetailsPage = () => {
     useEffect(() => {
         const fetchPet = async () => {
             try {
-                const pets = await getPetData();
-                //const pets = await response.json();
-                //const pets = getPetData;
-                console.log('pets', pets);
-                const selectedPet = pets.filter((p) => p.id === parseInt(id))[0]; // Find pet by ID
-                
-                console.log('selectedPet', selectedPet);
-                if (selectedPet) {
-                    setPet(selectedPet);
-                    setStatus(selectedPet.Status); // Set initial status
+                const petData = await getPetById(id);
+                console.log('petData', petData);
+                if (petData) {
+                    setPet(petData);
+                    setStatus(petData.status); // Set initial status
                 }
             } catch (error) {
                 console.error('Error fetching pet data:', error);
@@ -34,14 +29,17 @@ const PetDetailsPage = () => {
         return <h2>Loading pet details...</h2>;
     }
 
-    const handleApprove = () => {
-        setStatus("Approved"); // Update status
-        alert(`You approved adoption for ${pet.name}!`);
-    };
-
-    const handleDecline = () => {
-        setStatus("Not Approved"); // Reset status
-        alert(`You declined adoption for ${pet.name}.`);
+    const handleUpdateStatus = async (newStatus) => {
+        try {
+            const updatedPet = { ...pet, status: newStatus }; // Update status
+            const response = await updatePet(updatedPet); // Call API
+            setPet(response); // Update state with response
+            setStatus(response.status);
+            alert(`You ${newStatus === "Approved" ? "approved" : "declined"} adoption for ${pet.name}!`);
+            window.location.reload();
+        } catch (error) {
+            console.error('Error updating pet status:', error);
+        }
     };
 
     return (
@@ -49,17 +47,25 @@ const PetDetailsPage = () => {
             <h1>Adoption Approval</h1>
             <img src={pet.image} alt={pet.name} className="pet-image-large" />
             <h2>{pet.name}</h2>
-            <p><strong>Type:</strong> {pet.type}</p>
-            <p><strong>Breed:</strong> {pet.breed}</p>
-            <p><strong>Age:</strong> {pet.age} years</p>
-            <p><strong>Size:</strong> {pet.size}</p>
-            <p><strong>Location:</strong> {pet.location}</p>
-            <p><strong>Description:</strong> {pet.desc}</p>
-            <p><strong>Status:</strong> <span className={status === "Approved" ? "approved" : "not-approved"}>{status}</span></p>
 
+            {/* Details Section */}
+            <div className="pet-details">
+                <div><span>Type:</span><span>{pet.type}</span></div>
+                <div><span>Breed:</span><span>{pet.breed}</span></div>
+                <div><span>Age:</span><span>{pet.age} years</span></div>
+                <div><span>Size:</span><span>{pet.size}</span></div>
+                <div><span>Location:</span><span>{pet.location}</span></div>
+                <div><span>Description:</span><span>{pet.description}</span></div>
+                <div>
+                    <span>Status:</span>
+                    <span className={status === "Approved" ? "approved" : "not-approved"}>{status}</span>
+                </div>
+            </div>
+
+            {/* Approval/Decline Buttons */}
             <div className="approval-buttons">
-                <button className="approve-btn" onClick={handleApprove} disabled={status === "Approved"}>Approve</button>
-                <button className="decline-btn" onClick={handleDecline} disabled={status === "Not Approved"}>Decline</button>
+                <button className="approve-btn" onClick={() => handleUpdateStatus("Approved")} disabled={status === "Approved"}>Approve</button>
+                <button className="decline-btn" onClick={() => handleUpdateStatus("Not Approved")} disabled={status === "Not Approved"}>Decline</button>
             </div>
         </div>
     );

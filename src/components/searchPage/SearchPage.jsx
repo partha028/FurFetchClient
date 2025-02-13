@@ -18,6 +18,7 @@ const SearchPage = () => {
             try {
                 const data = await getPetData(); // Fetch data from API
                 setPetData(data);
+                console.log('pets', petData);
             } catch (error) {
                 console.error('Error fetching pet data:', error);
             }
@@ -26,7 +27,7 @@ const SearchPage = () => {
     }, []);
 
     // Filter pet data based on user selection
-    const filteredPets = petData.filter((pet) =>
+    const filteredPets = petData.filter((pet) => 
         pet.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
         (selectedBreed === '' || pet.breed === selectedBreed) &&
         (selectedAge === '' || pet.age.toString() === selectedAge) &&
@@ -67,7 +68,6 @@ const SearchPage = () => {
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="search-input"
                 />
-
                 <div className={`filter-section ${showFilters ? 'open' : ''}`}>
                     <div className="filter-header" onClick={() => setShowFilters(!showFilters)}>
                         Filter <span>{showFilters ? '−' : '+'}</span>

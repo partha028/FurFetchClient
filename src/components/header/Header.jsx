@@ -21,8 +21,8 @@ const Header = () => {
       <nav className={menuOpen ? 'nav open' : 'nav'}>
         <ul>
           <li><Link to="/home" onClick={() => setMenuOpen(false)}>Home</Link></li>
-          <li><Link to="/search" onClick={() => setMenuOpen(false)}>Search Pets</Link></li>
-          <li><Link to="/pets" onClick={() => setMenuOpen(false)}>Pets</Link></li>
+          <li><Link to="/search" onClick={() => setMenuOpen(false)}>Search</Link></li>
+          <li><Link to="/managePet" onClick={() => setMenuOpen(false)}>Manage</Link></li>
           <li><Link to="/blog" onClick={() => setMenuOpen(false)}>Blog</Link></li>
           <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
           <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
